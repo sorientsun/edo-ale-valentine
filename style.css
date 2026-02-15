@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  background-color: #0F380F;
+  color: #9BBC0F;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+}
+
+.screen {
+  display: none;
+  padding: 20px;
+}
+
+.active {
+  display: block;
+  animation: fadeIn 200ms ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+#game {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 220px;
+}
+
+button {
+  background-color: #306230;
+  color: #9BBC0F;
+  border: 3px solid #8BAC0F;
+  padding: 15px;
+  margin: 10px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+}
+
+button:hover {
+  background-color: #8BAC0F;
+  color: #0F380F;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+#characters-container {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+.sprite {
+  width: 120px;
+  image-rendering: pixelated;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+/* Popup */
+#popup {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(15,56,15,0.75);
+  z-index: 9999;
+}
+
+#popup.hidden {
+  display: none;
+}
+
+.popup-card {
+  background: #306230;
+  border: 4px solid #9BBC0F;
+  padding: 24px;
+}
+
+/* Finale */
+.ending-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.ending-title {
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* Abbraccio */
+#characters-container.hug {
+  gap: 0px;
+}
+
+#characters-container.hug #ale {
+  transform: translateX(10px);
+}
+
+#characters-container.hug #edo {
+  transform: translateX(-10px);
+}
+
+/* Cuori */
+.heart {
+  position: fixed;
+  font-size: 18px;
+  animation: floatUp 1200ms linear forwards;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 1; }
+  to   { transform: translateY(-140px); opacity: 0; }
+}

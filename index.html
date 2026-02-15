@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Edo & Ale - Valentine</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="password-screen" class="screen active">
+  <h2>Inserisci la password</h2>
+  <input type="password" id="password-input">
+  <button onclick="checkPassword()">ENTER</button>
+  <p id="error-message"></p>
+</div>
+
+<div id="game">
+
+  <div id="characters-container">
+    <img src="assets/ale.png" id="ale" class="sprite">
+    <img src="assets/edo.png" id="edo" class="sprite">
+  </div>
+
+  <div class="screen" id="scene1">
+    <h1>Benvenuto nel magico mondo di Edo&Ale!</h1>
+    <p>Sei sicuro di conoscere Edo&Ale alla perfezione?</p>
+    <button onclick="playSfx('sfx-click'); nextScene(2)">START</button>
+  </div>
+
+  <div id="dynamic-scene" class="screen"></div>
+
+</div>
+
+<div id="popup" class="hidden">
+  <div class="popup-card">
+    <p id="popup-text"></p>
+    <button onclick="closePopup()">Riprova</button>
+  </div>
+</div>
+
+<audio id="sfx-click" src="sounds/click.mp3"></audio>
+<audio id="sfx-correct" src="sounds/correct.mp3"></audio>
+<audio id="sfx-wrong" src="sounds/wrong.mp3"></audio>
+<audio id="sfx-victory" src="sounds/victory.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
